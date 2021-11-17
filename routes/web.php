@@ -17,6 +17,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->post('/register', 'UserController@register');
+$router->post('/login', 'UserController@login');
+$router->post('/logout', 'UserController@logout');
+
 $router->get('/jenis', 'JenisController@index');
 $router->post('/Createjenis', 'JenisController@create');
 $router->get('/Showjenis/{id}', 'JenisController@show');
