@@ -17,6 +17,12 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get('/jenis', 'JenisController@index');
+$router->post('/Createjenis', 'JenisController@create');
+$router->get('/Showjenis/{id}', 'JenisController@show');
+$router->put('/Updatejenis/{id}', 'JenisController@update');
+$router->delete('/Deletejenis/{id}', 'JenisController@destroy');
+
 $router->get('/book', 'BookController@index');
 $router->post('/Createbook', 'BookController@create');
 $router->get('/Showbook/{id}', 'BookController@show');

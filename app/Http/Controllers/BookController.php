@@ -17,9 +17,9 @@ class BookController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, [
-            "name" => "required|unique:book",
-            "price" => "required",
-            "status" => "required"
+            "name"      => "required|unique:book",
+            "price"     => "required",
+            "status"    => "required"
         ]);
         
         $data = $request->all();
@@ -71,6 +71,6 @@ class BookController extends Controller
         }
         
         $book->delete();
-        return response()->json(['message' => 'Book has been deleted']);
+        return response()->json(['message' =>'Book'.' '. $book->name.' '.'has been deleted']);
     }
 }

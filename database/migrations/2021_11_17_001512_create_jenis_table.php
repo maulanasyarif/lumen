@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookTable extends Migration
+class CreateJenisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateBookTable extends Migration
      */
     public function up()
     {
-        Schema::create('book', function (Blueprint $table) {
+        Schema::create('jenis', function (Blueprint $table) {
             $table->id();
-            $table->integer('jenis_id');
-            $table->string('name');
-            $table->integer('price');
-            $table->longtext('desc')->nullable();
-            $table->enum('status', ['New', 'Second']);
+            $table->string('nama_jenis');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateBookTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('book');
+        Schema::dropIfExists('jenis');
     }
 }
